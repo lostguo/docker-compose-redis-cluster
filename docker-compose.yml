@@ -1,0 +1,80 @@
+version: '3.4'
+services:
+ node1:
+  image: redis:5.0.5
+  container_name: redis-node1
+  restart: always
+  ports:
+   - 6061:6061
+   - 16061:16061
+  volumes:
+   - ./data/redis-cluster/node1:/data
+   - ./config/redis-cluster/node1:/usr/local/etc/redis
+  command:
+   redis-server /usr/local/etc/redis/redis.conf
+
+ node2:
+  image: redis:5.0.5
+  container_name: redis-node2
+  restart: always
+  ports:
+   - 6062:6062
+   - 16062:16062
+  volumes:
+   - ./data/redis-cluster/node2:/data
+   - ./config/redis-cluster/node2:/usr/local/etc/redis
+  command:
+   redis-server /usr/local/etc/redis/redis.conf
+
+
+ node3:
+  image: redis:5.0.5
+  container_name: redis-node3
+  restart: always
+  ports:
+   - 6063:6063
+   - 16063:16063
+  volumes:
+   - ./data/redis-cluster/node3:/data
+   - ./config/redis-cluster/node3:/usr/local/etc/redis
+  command:
+   redis-server /usr/local/etc/redis/redis.conf
+
+ node4:
+  image: redis:5.0.5
+  container_name: redis-node4
+  restart: always
+  ports:
+   - 6064:6064
+   - 16064:16064
+  volumes:
+   - ./data/redis-cluster/node4:/data
+   - ./config/redis-cluster/node4:/usr/local/etc/redis
+  command:
+   redis-server /usr/local/etc/redis/redis.conf
+
+ node5:
+  image: redis:5.0.5
+  container_name: redis-node5
+  restart: always
+  ports:
+   - 6065:6065
+   - 16065:16065
+  volumes:
+   - ./data/redis-cluster/node5:/data
+   - ./config/redis-cluster/node5:/usr/local/etc/redis
+  command:
+   redis-server /usr/local/etc/redis/redis.conf
+
+ node6:
+  image: redis:5.0.5
+  container_name: redis-node6
+  restart: always
+  ports:
+   - 6066:6066
+   - 16066:16066
+  volumes:
+   - ./data/redis-cluster/node6:/data
+   - ./config/redis-cluster/node6:/usr/local/etc/redis
+  command:
+   redis-server /usr/local/etc/redis/redis.conf
